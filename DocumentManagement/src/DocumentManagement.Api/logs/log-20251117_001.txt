@@ -1,0 +1,854 @@
+2025-11-17 00:52:13.659 -05:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5128: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+ ---> System.Net.Sockets.SocketException (10048): Solo se permite un uso de cada dirección de socket (protocolo/dirección de red/puerto)
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-11-17 00:58:06.741 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - DocumentManagement.Api.Controllers.DocumentsController.UploadDocument (DocumentManagement.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action DocumentManagement.Api.Controllers.DocumentsController.UploadDocument (DocumentManagement.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-11-17 01:23:25.458 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - DocumentManagement.Api.Controllers.DocumentsController.UploadDocument (DocumentManagement.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action DocumentManagement.Api.Controllers.DocumentsController.UploadDocument (DocumentManagement.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-11-17 01:23:29.271 -05:00 [INF] Request GET /.well-known/appspecific/com.chrome.devtools.json completed with status 307 in 1ms - RequestId: 92599eba-7535-4a3a-854d-66f30d5790a1
+2025-11-17 01:23:29.503 -05:00 [INF] Request GET /.well-known/appspecific/com.chrome.devtools.json completed with status 404 in 173ms - RequestId: 1bd70ebc-afaa-40f2-ac67-e5802b39f1b5
+2025-11-17 01:23:34.390 -05:00 [INF] Request GET /.well-known/appspecific/com.chrome.devtools.json completed with status 307 in 0ms - RequestId: 00cd41a2-b3d9-468c-8b23-13d9a18ba2bb
+2025-11-17 01:23:34.419 -05:00 [INF] Request GET /.well-known/appspecific/com.chrome.devtools.json completed with status 404 in 1ms - RequestId: 34715169-15bd-48ea-b2a4-33d045efeec9
+2025-11-17 01:23:34.819 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - DocumentManagement.Api.Controllers.DocumentsController.UploadDocument (DocumentManagement.Api). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Error reading parameter(s) for action DocumentManagement.Api.Controllers.DocumentsController.UploadDocument (DocumentManagement.Api) as [FromForm] attribute used with IFormFile. Please refer to https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads for more information
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository, Func`3 parameterGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateParametersAsync(ApiDescription apiDescription, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`3 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-11-17 01:48:33.350 -05:00 [INF] Request POST /api/v1/Auth/login completed with status 307 in 1ms - RequestId: 89dc1f64-7f8d-4fa4-afb5-37f2e10ba62e
+2025-11-17 01:48:33.416 -05:00 [INF] Request OPTIONS /api/v1/Auth/login completed with status 204 in 1ms - RequestId: 17379259-a884-4055-8ad7-7de3235931ec
+2025-11-17 01:53:58.501 -05:00 [INF] Request POST /api/v1/Auth/login completed with status 307 in 1ms - RequestId: 4be904ea-f393-47a5-a30a-dd87b6c849de
+2025-11-17 01:53:58.566 -05:00 [INF] Request OPTIONS /api/v1/Auth/login completed with status 204 in 1ms - RequestId: 93e70f59-15f5-49fe-a23f-915693ad6d9f
+2025-11-17 01:56:27.190 -05:00 [INF] Request POST /api/v1/Auth/login completed with status 307 in 1ms - RequestId: a66fdb0c-ad76-4063-899f-78116ca3b0db
+2025-11-17 01:56:27.256 -05:00 [INF] Request OPTIONS /api/v1/Auth/login completed with status 204 in 1ms - RequestId: b07611a0-d1c8-4a70-804f-9aaa45604954
+2025-11-17 01:59:28.852 -05:00 [INF] Request POST /api/v1/Auth/login completed with status 200 in 35651ms - RequestId: 2b791601-b4cd-4a7c-a6ec-f5a275b2cad9
+2025-11-17 01:59:48.519 -05:00 [INF] Request GET /api/v1/Documents completed with status 401 in 9ms - RequestId: b51accb4-1b45-4d93-b1db-1ecfe20440b3
+2025-11-17 02:00:08.943 -05:00 [INF] Request GET /api/v1/Documents completed with status 401 in 4ms - RequestId: f728c139-37c6-4085-b5b5-6dd7b1c1ed57
+2025-11-17 02:01:10.334 -05:00 [INF] Request POST /api/v1/Documents completed with status 401 in 35ms - RequestId: 150d1351-0e8b-4234-9abb-d04e474e0660
+2025-11-17 02:01:56.436 -05:00 [INF] Request POST /api/v1/Documents completed with status 401 in 62ms - RequestId: a9351f3c-f7d2-48bb-9700-f331209f1841
+2025-11-17 02:02:56.038 -05:00 [INF] Request POST /api/v1/Documents completed with status 200 in 23500ms - RequestId: ebada0cf-15b9-4a4f-ae34-c2c28d150165
+2025-11-17 02:02:56.111 -05:00 [ERR] An unhandled exception occurred
+System.UnauthorizedAccessException: User email not found in token
+   at DocumentManagement.Api.Extensions.ClaimsPrincipalExtensions.GetUserEmail(ClaimsPrincipal principal) in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Extensions\ClaimsPrincipalExtensions.cs:line 10
+   at DocumentManagement.Api.Controllers.DocumentsController.UploadDocument(UploadDocumentFormRequest request) in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Controllers\DocumentsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Program.cs:line 174
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context) in C:\Users\User\Documents\Github\AspNetCoreRateLimit\src\AspNetCoreRateLimit\Middleware\RateLimitMiddleware.cs:line 124
+   at DocumentManagement.Api.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Middleware\RequestLoggingMiddleware.cs:line 25
+   at DocumentManagement.Api.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Middleware\ExceptionHandlingMiddleware.cs:line 19
+2025-11-17 02:03:05.195 -05:00 [INF] Request POST /api/v1/Documents completed with status 200 in 4518ms - RequestId: e8fd691d-f9df-4c5b-8b17-be098599a039
+2025-11-17 02:03:05.242 -05:00 [ERR] An unhandled exception occurred
+System.UnauthorizedAccessException: User email not found in token
+   at DocumentManagement.Api.Extensions.ClaimsPrincipalExtensions.GetUserEmail(ClaimsPrincipal principal) in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Extensions\ClaimsPrincipalExtensions.cs:line 10
+   at DocumentManagement.Api.Controllers.DocumentsController.UploadDocument(UploadDocumentFormRequest request) in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Controllers\DocumentsController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Program.<>c.<<Main>b__0_6>d.MoveNext() in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Program.cs:line 174
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context) in C:\Users\User\Documents\Github\AspNetCoreRateLimit\src\AspNetCoreRateLimit\Middleware\RateLimitMiddleware.cs:line 124
+   at DocumentManagement.Api.Middleware.RequestLoggingMiddleware.InvokeAsync(HttpContext context) in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Middleware\RequestLoggingMiddleware.cs:line 25
+   at DocumentManagement.Api.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in E:\ArionkoderChallenge\DocumentManagement\src\DocumentManagement.Api\Middleware\ExceptionHandlingMiddleware.cs:line 19
+2025-11-17 02:05:14.050 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'DocumentManagement.Infrastructure.Data.Context.ApplicationDbContext'.
+System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-11-17 02:05:14.098 -05:00 [INF] Request POST /api/v1/Documents completed with status 500 in 125741ms - RequestId: 65c5ca90-9f11-4e51-b997-7befc0736853
+2025-11-17 14:09:21.007 -05:00 [INF] Request POST /api/v1/Auth/login completed with status 200 in 4575ms - RequestId: f8924dfa-5ae1-47dd-813b-b3b31703d175
+2025-11-17 14:10:10.473 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 401 in 6ms - RequestId: 8a584f0f-5ff5-49dd-ad92-4fb7665d766a
+2025-11-17 14:10:28.048 -05:00 [INF] Request POST /api/v1/Auth/logout completed with status 401 in 1ms - RequestId: a1c20028-f3bf-4eb5-8872-13e6ea84ac44
+2025-11-17 14:10:46.183 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 401 in 1ms - RequestId: 17d2f64c-3d2c-42b5-b359-0e5ff4108efa
+2025-11-17 14:22:53.165 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 401 in 0ms - RequestId: da0bc9a2-368d-4e9b-b7e1-3f702a18726d
+2025-11-17 14:23:02.824 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 401 in 0ms - RequestId: f46661fc-cdac-4824-bef4-7d61358155a4
+2025-11-17 14:46:16.199 -05:00 [INF] Request POST /api/v1/Auth/login completed with status 200 in 2138ms - RequestId: 2c1648f6-13f0-4768-8696-2c58cf371248
+2025-11-17 14:47:04.732 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 401 in 7ms - RequestId: 6bf56316-8820-4d8e-a06f-a322b0c53b73
+2025-11-17 14:47:26.420 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 401 in 3ms - RequestId: 6df3c69f-fe5c-437e-b4e9-9723061d951a
+2025-11-17 14:47:33.283 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 401 in 1ms - RequestId: 4c98c3ef-05b3-43a5-85f0-ca0fc09fad2f
+2025-11-17 14:48:57.838 -05:00 [INF] Request POST /api/v1/Auth/login completed with status 200 in 2091ms - RequestId: 01a3d468-3d94-41bf-828e-a36c12270f4f
+2025-11-17 14:51:29.781 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 401 in 60ms - RequestId: d2292a6c-1f48-414a-90af-5fec7979424e
+2025-11-17 14:52:13.149 -05:00 [INF] Request POST /api/v1/Auth/login completed with status 200 in 2815ms - RequestId: 390e6ee8-ea16-4184-928c-9528157045f5
+2025-11-17 14:52:50.733 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 401 in 0ms - RequestId: a995a401-59a6-4848-b3d7-91c705aa9976
+2025-11-17 14:55:21.469 -05:00 [INF] Request POST /api/v1/Auth/login completed with status 200 in 1668ms - RequestId: 089c1c63-2fd4-4362-90d9-24a9a8a10378
+2025-11-17 14:55:54.911 -05:00 [INF] Request GET /api/v1/Auth/me completed with status 200 in 6209ms - RequestId: 6d077761-d4ef-4257-a76f-7330028cf093
+2025-11-17 15:07:14.950 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 19acffc7-c5fb-4c29-86e7-099180303a2d
+2025-11-17 15:07:14.957 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3f4dab68-130c-4c19-8fb7-34a3846e2e7b
+2025-11-17 15:07:15.021 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2f7beb88-a207-41f9-867e-e416c12634b4
+2025-11-17 15:07:15.087 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0a199248-0372-4613-9ddc-16c6220b3cfe
+2025-11-17 15:07:15.149 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 91773c65-e46d-4de8-834e-051cc3c99c85
+2025-11-17 15:07:15.217 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b83d32c2-2900-4d28-a034-93a5fc19ae8f
+2025-11-17 15:07:15.285 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 686e906d-c3c7-4b0e-b195-0db88ec0213f
+2025-11-17 15:07:15.357 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e4eabda2-a58a-4fef-9385-31c816949f52
+2025-11-17 15:07:15.439 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 590ba498-5092-4b28-9640-d0cc21004cd2
+2025-11-17 15:07:15.510 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 20ab5bce-49f4-4cf9-a2fc-f36b5b69ba98
+2025-11-17 15:07:15.598 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6c5be386-139f-4993-9355-897599afd851
+2025-11-17 15:07:15.685 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9fe461cf-db5f-43d7-bc93-6c13ff1f5575
+2025-11-17 15:07:15.777 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1b9a519e-001f-4dcc-a56e-6e0602dd4d10
+2025-11-17 15:07:15.863 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a391dd05-79e3-4510-bbf5-20bdc674c175
+2025-11-17 15:07:15.953 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6f905968-9b75-400c-b721-250fbfd6387e
+2025-11-17 15:07:16.052 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 29500f2d-6602-457e-ab3f-a6ef8dd96dc3
+2025-11-17 15:07:16.151 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 03450e92-b685-4881-ba6d-cd44aa3a9cec
+2025-11-17 15:07:16.247 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5ceb6226-a4e1-4844-82e9-3839f6ad9bf5
+2025-11-17 15:07:16.347 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 323066c9-4ae1-400f-b039-dd174576d84a
+2025-11-17 15:07:16.443 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7b6ed44a-a59f-420a-b425-059bcbc7d1ba
+2025-11-17 15:07:16.561 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 07b805f1-1f4d-4624-b067-9fc08e17603e
+2025-11-17 15:07:16.670 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9564a75f-6433-4e64-af57-a7c4d3b1fed1
+2025-11-17 15:07:16.799 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a6e040d8-2f57-4c64-9544-9d1f4805856e
+2025-11-17 15:07:16.929 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b88fcc4e-c2e1-4015-99ee-62d3b1b5027f
+2025-11-17 15:07:17.081 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d0251ca3-17d3-4292-9832-506d62314653
+2025-11-17 15:07:17.223 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f5989fe0-6101-4837-9168-16d5f63c368e
+2025-11-17 15:07:17.358 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 20cdf7de-6413-4d3d-8168-f3ee096a6db1
+2025-11-17 15:07:17.499 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8607e0af-2ab0-492a-b9d8-7815e65847d8
+2025-11-17 15:07:17.653 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 38cd398d-c1f0-4559-8a8f-fb353a502218
+2025-11-17 15:07:17.803 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6d73416f-3466-43d6-b894-8e364ef76b28
+2025-11-17 15:07:17.954 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2316b71f-5e34-4500-ad85-6fb2587973ed
+2025-11-17 15:07:18.100 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d176e51a-daa9-4593-b057-35f14704325b
+2025-11-17 15:07:18.271 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f283ea30-ef60-4228-8904-6cb289d8f2f6
+2025-11-17 15:07:18.419 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 915262ff-666c-4425-8dc1-88c85c6e9e01
+2025-11-17 15:07:18.573 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 60b2754c-b1fd-4cd5-9744-7389984917cc
+2025-11-17 15:07:18.730 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1ffcb5bc-9618-47e6-bb76-98c43f169a6b
+2025-11-17 15:07:18.901 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2622ace5-ea19-43e2-be2c-c9a53a71d22c
+2025-11-17 15:07:19.061 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2acf523a-c350-4970-8cb4-73a3b365c37d
+2025-11-17 15:07:19.229 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a8873615-0c34-4c2d-918c-4e4f8f19bf04
+2025-11-17 15:07:19.404 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4cb2a1bd-622c-4188-aaf7-370c005649da
+2025-11-17 15:07:19.576 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a1c39ef2-cb6d-4d58-a1e5-d9ffb95e77e4
+2025-11-17 15:07:19.762 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 681df5b7-1843-49d5-b5d6-50470c2ebaee
+2025-11-17 15:07:19.959 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 51feecca-f430-4e13-b9d5-1d73f876664d
+2025-11-17 15:07:20.233 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5441edb1-1c1e-4909-a68b-2b5d23c0825c
+2025-11-17 15:07:20.461 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9b22d4f2-c522-4647-a9ce-333e981d9f7c
+2025-11-17 15:07:20.663 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9d863c34-a2c9-4e6c-a104-21e9e6aaab91
+2025-11-17 15:07:20.865 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7fbd40d6-59a4-47b6-9193-fddc32fe9a4a
+2025-11-17 15:07:21.068 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e831c777-e52f-4b1b-990b-28aa85998a78
+2025-11-17 15:07:21.277 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6700b174-3de6-4122-9ff1-f775c57a4f9f
+2025-11-17 15:07:21.487 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9b9d43af-0761-4cf7-bd87-c0b5260224bc
+2025-11-17 15:07:21.705 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 63fe9cd9-ac16-4708-bfca-1d64613c096e
+2025-11-17 15:07:21.938 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 205a5cda-ecfd-4171-af6b-2fc601af9e48
+2025-11-17 15:07:22.215 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dcce4d23-0055-4286-8936-19f243224f59
+2025-11-17 15:07:22.434 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a4a20a61-8dc8-421f-8a7c-98190e418cf8
+2025-11-17 15:07:22.654 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ba01304c-17af-435c-b3f4-8bf8b877749b
+2025-11-17 15:07:22.872 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4247781b-e4d3-401f-befc-1b8af4146422
+2025-11-17 15:07:23.117 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 984914f1-a7be-4caa-a082-a3ff2846c9d5
+2025-11-17 15:07:23.346 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: edb589d9-7cfa-4795-91da-b9ce8a16d364
+2025-11-17 15:07:23.584 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4ea3a51d-b6df-4028-b5da-a12ff7250986
+2025-11-17 15:07:23.819 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9339d1e7-a965-4435-817c-a06708302683
+2025-11-17 15:07:24.103 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ef4011d7-5aee-48ee-939f-2a0c27dfd74d
+2025-11-17 15:07:24.347 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 35421406-1070-4ed4-bb64-f258db1e64a3
+2025-11-17 15:07:24.600 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ec3e3915-9efd-435a-973f-7eee8e6fd250
+2025-11-17 15:07:24.865 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7234afc2-43d3-4c1d-a63f-6036c234d0dd
+2025-11-17 15:07:25.148 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 332cdaeb-91b9-4cee-b6a5-f543e9da54e0
+2025-11-17 15:07:25.424 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1edd9a56-f5b6-4f57-9b58-9820fefdff97
+2025-11-17 15:07:25.681 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 490870c2-63a2-46bd-bbab-c27139bb2faf
+2025-11-17 15:07:25.939 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 90c1ffce-a48e-4cc3-8066-fced20b0df7c
+2025-11-17 15:07:26.285 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e21630b4-5b45-4bf2-b7e0-b9cad104cc35
+2025-11-17 15:07:26.559 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3db3c4d0-8b11-4669-9a05-02439dd76287
+2025-11-17 15:07:26.852 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fb5d12dd-fb26-40e1-9f07-8e23206778e7
+2025-11-17 15:07:27.155 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e805141c-21a2-47c7-aafd-667d76d5cc4e
+2025-11-17 15:07:27.473 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 22c0dd98-68fc-4d20-9622-a02edeb6261f
+2025-11-17 15:07:27.766 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d382a5b1-5c94-4ec2-9ea9-a0dd8e897370
+2025-11-17 15:07:28.040 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 38f9674e-1543-4503-b608-58fd2d525a0d
+2025-11-17 15:07:28.345 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2fcf9dcc-9234-462d-82e8-296b97bbcead
+2025-11-17 15:07:28.667 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b250db3e-4b71-4fda-ab11-3056a9656808
+2025-11-17 15:07:28.973 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f703760a-8124-49ef-b9db-beafca33fe23
+2025-11-17 15:07:29.336 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 01c3394d-4ddc-454f-9ecc-60d5cfa953c2
+2025-11-17 15:07:29.677 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 905f463b-9ba1-466c-8e1d-aa79bead5191
+2025-11-17 15:07:30.026 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dfd034c8-6a09-43fc-bc33-3b65dd100c2f
+2025-11-17 15:07:30.413 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ef4feec9-c616-470d-89ac-2f84b89cd013
+2025-11-17 15:07:30.758 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 83e5f298-8c48-4355-8927-82ce4ccaa287
+2025-11-17 15:07:31.184 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f184e1f7-eb80-4bcf-b5fc-4bd2e0260377
+2025-11-17 15:07:31.632 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 25ca88e9-f762-4d2c-956e-e9b048585cc2
+2025-11-17 15:07:31.973 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a84ff726-6cbc-4f64-aba2-74a3f1dbf5a5
+2025-11-17 15:07:32.311 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6dfff38b-c33c-4753-a0dd-87a7372a039f
+2025-11-17 15:07:32.629 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1f8ec941-bc32-4393-8fcf-64f2bb67ef42
+2025-11-17 15:07:32.978 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ec47ec67-ed84-4588-9c67-87ba86e9bc58
+2025-11-17 15:07:33.355 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ce154c13-7c2e-46de-bd5e-a07ce8cc06eb
+2025-11-17 15:07:33.692 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: cb43286b-fde1-40e7-9c71-aac66161149e
+2025-11-17 15:07:34.247 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e25c19fe-7ff6-4f0d-87f5-f65c25cea6e0
+2025-11-17 15:07:34.670 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ba283105-50af-4f12-b446-14caeb673241
+2025-11-17 15:07:35.040 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 201fa5e2-37e7-4d70-a1ad-bab111c07b6e
+2025-11-17 15:07:35.383 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8565e495-1fa6-47ea-b153-82a488978a76
+2025-11-17 15:07:35.724 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 439c23de-7bcb-42f6-b5b8-dfecfe4bb13c
+2025-11-17 15:07:36.066 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1ea4d4d8-d81b-4db7-bbad-04d96e599489
+2025-11-17 15:07:36.399 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 738c2d86-27a5-4d92-9228-8d503e1d5861
+2025-11-17 15:07:36.728 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6cada563-ba8e-47d4-8023-1919c919ebb2
+2025-11-17 15:07:37.337 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7b0b2afd-d4c7-400d-8079-41a0978ad178
+2025-11-17 15:07:37.774 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d8077262-6661-47bb-83de-e7b7eda057f3
+2025-11-17 15:07:38.133 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 75601c85-2c01-49a0-b65b-e3f6c2c417b7
+2025-11-17 15:07:38.561 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8bea543e-2ff4-41d9-925a-962c3bb6f049
+2025-11-17 15:07:38.968 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 84a5d98d-7535-4ef7-b291-ebdf74390e3d
+2025-11-17 15:07:39.342 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 96675194-43f6-4282-babe-9d3e898e66be
+2025-11-17 15:07:39.698 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 76c441b1-70b1-4a36-b438-670de7e5e419
+2025-11-17 15:07:40.030 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f2553592-d157-4c00-a526-5d3da1785dbb
+2025-11-17 15:07:40.368 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 04d690f5-37cb-4d38-ac2d-257d56c5b864
+2025-11-17 15:07:40.796 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 38a26633-ab34-4760-a96d-703a1d463177
+2025-11-17 15:07:41.174 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4d8851c3-c02b-4a8c-baef-eae997d5a718
+2025-11-17 15:07:41.512 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 99933829-8c1a-411d-bbe6-0e78ba651e82
+2025-11-17 15:07:41.879 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2fe62a52-d717-400f-9c7a-c4d34524ce39
+2025-11-17 15:07:42.383 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3d03c320-e592-44e2-a337-a84e684db4c1
+2025-11-17 15:07:42.934 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9417c2f2-a36d-44fe-aab6-c19f5b1f16c3
+2025-11-17 15:07:43.732 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f78174ff-c03b-449e-95bb-cf7d6e211886
+2025-11-17 15:07:44.194 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9734d74a-820b-4485-b427-c6f034575a27
+2025-11-17 15:07:44.626 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c6e65a99-5814-4abc-bee5-c4327f75df15
+2025-11-17 15:07:45.093 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fffda37f-5cad-4b45-bc82-1b695b9679a5
+2025-11-17 15:07:45.600 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 76aa87b8-2f67-4712-ad62-3e655957794c
+2025-11-17 15:07:46.044 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6f2c26fd-5fe3-4291-b80f-513cccddc950
+2025-11-17 15:07:46.484 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 876d7ec5-6b81-4765-953e-f363c94f3168
+2025-11-17 15:07:47.167 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 64892cd0-9bdb-4739-9b9c-804b761e79df
+2025-11-17 15:07:47.543 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 93af5899-fb7a-4bfb-9de0-d9d2537e645a
+2025-11-17 15:07:47.898 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d1f36c84-d63e-4605-bff6-2fe5ddf2c041
+2025-11-17 15:07:48.305 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c022ca60-bff0-430a-b275-b4fd8e633f58
+2025-11-17 15:07:48.637 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d4e60d9a-cd77-4af3-b757-097947afd1cd
+2025-11-17 15:07:49.041 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 07fddc6d-0ee4-4191-9fd3-7a1172f3826c
+2025-11-17 15:07:49.552 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 709497dc-55b5-4cf1-91d3-a651f887c517
+2025-11-17 15:07:50.043 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1c689524-ec68-4d57-b8d4-074ba889894c
+2025-11-17 15:07:50.567 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 44592c58-31dd-4c23-bf1f-24d06f983ca7
+2025-11-17 15:07:51.151 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f8b14a01-0f28-4edb-9e39-6b75e700ee39
+2025-11-17 15:07:51.600 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f7c38135-ed37-49a0-bd30-b804efdf8e61
+2025-11-17 15:07:52.103 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 05f0870d-fa7e-4619-a753-20c92230d7cc
+2025-11-17 15:07:52.498 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 385a55f9-979e-40e9-a5d8-301e6a112d2e
+2025-11-17 15:07:52.840 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 67a9ab8e-6e94-4dcd-88c8-51fa87f3b2cb
+2025-11-17 15:07:53.251 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2c6e43e6-7f61-492f-a088-6ee329d90226
+2025-11-17 15:07:53.583 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 78eafef3-ce80-4918-8f89-5b13e2c575b7
+2025-11-17 15:07:53.963 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7dd9ef48-cd19-486a-9f7e-2091eedc9291
+2025-11-17 15:07:54.404 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0a505752-1b9b-406b-bea0-d0c6748e3571
+2025-11-17 15:07:54.769 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e6cbe2d5-ad7c-4b26-9686-25628077a9ba
+2025-11-17 15:07:55.198 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5e2d51ee-83b1-408a-83fb-eccc0376a184
+2025-11-17 15:07:55.618 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7665554f-ea18-49c1-91b1-e9f292665c73
+2025-11-17 15:07:55.967 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 28bf3bb4-94d5-4eb9-9d68-bc8afa8b86a8
+2025-11-17 15:07:56.312 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: cba0e769-1537-481a-905f-6166071c5cd0
+2025-11-17 15:07:56.664 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 41d6071c-ba5a-4791-8abe-7b332bb75522
+2025-11-17 15:07:57.021 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8788a0f3-a7d2-49f6-b731-54c9d958f75f
+2025-11-17 15:07:57.346 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5e3e924d-f717-4c97-b61b-6de6de5b8655
+2025-11-17 15:07:57.673 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 58f11435-38cf-4b08-9a45-cfa7b92bde2b
+2025-11-17 15:07:58.097 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e980b981-b17c-4766-a4ce-dabd9bf6773f
+2025-11-17 15:07:58.463 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d8488f57-0a2e-42dc-b437-12c4ee8b0dcd
+2025-11-17 15:07:58.809 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8fbbaae6-5153-46e7-8559-07cfb6da9a79
+2025-11-17 15:07:59.248 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8ae383e0-591c-49c2-84a7-cb4bf2118004
+2025-11-17 15:07:59.648 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b6655f1c-ef58-4f38-a104-31cc62e61cb8
+2025-11-17 15:07:59.962 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5c17170d-c5de-4216-8255-aa092e34eb80
+2025-11-17 15:08:00.334 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 519c9d19-1951-4b5a-81f0-a4288581eec3
+2025-11-17 15:08:00.741 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6303703c-642a-49b7-988b-5238c8e0cfb1
+2025-11-17 15:08:01.166 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: cd1c60e2-b2b6-46d0-9bee-b78a5f68d522
+2025-11-17 15:08:01.508 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e6be367b-7a0f-425a-a0de-7dc26e860939
+2025-11-17 15:08:01.825 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dd7b786f-dc3a-4784-984d-c8fc3230493f
+2025-11-17 15:08:01.908 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ef2beb37-7c9e-4291-9d7c-e06630a4b342
+2025-11-17 15:08:01.977 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6934f2a8-3601-40b0-ba73-5369cc7278a7
+2025-11-17 15:08:02.052 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e2d89023-7290-48b3-af55-9075eed5a352
+2025-11-17 15:08:02.119 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 29db5771-31be-4c15-a4d7-52ff1dd9af4a
+2025-11-17 15:08:02.175 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: cd85f042-cc35-43f6-a492-c2d3f223ff34
+2025-11-17 15:08:02.234 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 270e866a-4588-40ad-92b3-b83f44693db4
+2025-11-17 15:08:02.293 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c80f02ac-1345-4fb6-ba08-5ea869f96c0f
+2025-11-17 15:08:02.356 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2ae3d754-f96d-4b00-b974-f713d2fe183f
+2025-11-17 15:08:02.423 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4783e1bc-2567-47f0-b4d5-f90d9fa71e45
+2025-11-17 15:08:02.484 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 45b92857-d82a-475a-89a1-8620f80f5861
+2025-11-17 15:08:02.548 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: de7f3748-0f42-4341-aa69-80926e4977a6
+2025-11-17 15:08:02.610 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d0e56f84-2596-40a8-b976-7984f8e51523
+2025-11-17 15:08:02.667 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4bbf585c-3e6f-4c90-a1e8-9133df1a5e9c
+2025-11-17 15:08:02.725 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 784fd417-0f87-4013-be05-673250c956ac
+2025-11-17 15:08:02.833 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ba7c4d60-59d0-4e6f-a918-e4c841d03cd5
+2025-11-17 15:08:02.918 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9fa5906d-f995-476d-b46f-948c2b769726
+2025-11-17 15:08:03.007 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 38f52559-a939-401f-b300-5764efc1b55c
+2025-11-17 15:08:03.073 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: adb206d5-a75e-43c7-aeb5-a5a1e8e21f44
+2025-11-17 15:08:03.132 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 059373e4-979f-40dd-91b0-352df982e3a3
+2025-11-17 15:08:03.199 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1ce743b2-77dd-48c0-981e-045f69e25456
+2025-11-17 15:08:03.263 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 154dd810-6430-4d37-b23c-1e2ca6f6f341
+2025-11-17 15:08:03.329 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0ac6370b-fc00-42c1-8d13-57951b8d0b28
+2025-11-17 15:08:03.389 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7bf6185f-32f3-4a53-8368-cf597d3abfb1
+2025-11-17 15:08:03.459 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 78182a0f-7e6f-4810-a652-8f5a127753b9
+2025-11-17 15:08:03.521 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 06ce2eeb-10b4-4aa4-970d-1ea569f9b096
+2025-11-17 15:08:03.584 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9fa80d49-cf53-47c9-a2a7-8de4781c3146
+2025-11-17 15:08:03.648 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8cff75e3-9ec3-4542-bccb-bb9afb08f0e9
+2025-11-17 15:08:03.711 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f280edbc-020c-413b-af59-def47b73b1d2
+2025-11-17 15:08:03.780 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9edde2c5-5df7-4920-9ebc-fcae60d383d9
+2025-11-17 15:08:03.847 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2b70e01c-aff9-47c6-96c7-b4a6c5183994
+2025-11-17 15:08:03.905 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 63099321-9cc5-4dd9-89fa-a9c1d06178af
+2025-11-17 15:08:03.974 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1b82c770-5d40-4bf2-b68a-b7bd9eb5a931
+2025-11-17 15:08:04.045 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 033ff09d-1bf1-4b5d-a08c-abd3dbc8741a
+2025-11-17 15:08:04.109 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1a200a9a-6dc0-4557-835e-0b56d0b10228
+2025-11-17 15:08:04.172 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1068e18c-9a46-4554-95ed-196563ad3a85
+2025-11-17 15:08:04.234 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ba43bf9d-983e-4ce4-bca0-edad7022e428
+2025-11-17 15:08:04.297 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3d0094ab-2bac-47d5-9d17-afc5e6786279
+2025-11-17 15:08:04.365 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2d4fc380-751f-4f97-bfc6-3af3c4679ec9
+2025-11-17 15:08:04.427 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6d31f8ac-7221-4bb7-b9b6-392e17caad67
+2025-11-17 15:08:04.498 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3e5b2536-5056-434a-8e7e-d8f6e19ac1e9
+2025-11-17 15:08:04.568 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 25ba19ab-4f63-4696-a1d1-acc9a2feb931
+2025-11-17 15:08:04.632 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: da03617f-4186-43ee-92cb-53bfa0039b5a
+2025-11-17 15:08:04.698 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8b243a18-2e0b-45c7-9431-e42061b6f28c
+2025-11-17 15:08:04.757 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 32d29d97-f57a-41a6-b3dc-72bb3ef731b3
+2025-11-17 15:08:04.818 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d89b7b4e-6738-4bff-b115-03cd3bdc0fdf
+2025-11-17 15:08:04.883 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e169702a-ccd5-490d-aa32-f161c687ce58
+2025-11-17 15:08:04.958 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fc4f5891-0edf-41d0-b0ba-f9649c0d1675
+2025-11-17 15:08:05.024 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9459f4dc-c3ea-465f-a961-04e3adc9718e
+2025-11-17 15:08:05.089 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c7f2d03e-f465-4898-bff8-f044ecf03aa6
+2025-11-17 15:08:05.159 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 658d6d7d-a4fb-466b-a4f0-04bbbd6b0a18
+2025-11-17 15:08:05.224 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bae31a12-60bc-4712-8211-56a7d348d27b
+2025-11-17 15:08:05.283 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4717dab8-f966-48c8-aca1-5cb97a5e4f78
+2025-11-17 15:08:05.352 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6cdda251-cb78-44b1-bc91-cf75f82c4e18
+2025-11-17 15:08:05.425 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3f29e36e-952c-44c2-966a-a63c7408f696
+2025-11-17 15:08:05.487 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e681c96b-834c-453e-af5a-949d9fce55ed
+2025-11-17 15:08:05.551 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bff81850-171f-4e17-87e0-5c91a24769dc
+2025-11-17 15:08:05.613 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c0dd7d3e-8d39-4034-85b8-dc76d9ae2bf6
+2025-11-17 15:08:05.685 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 36ccdf56-2a0c-4b7a-86a5-80dd33d22bcf
+2025-11-17 15:08:05.757 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c8b9abf1-5302-442b-856e-0cb419713f27
+2025-11-17 15:08:05.830 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 29de6509-fb11-4d56-8d4c-f7949cc14400
+2025-11-17 15:08:05.897 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8dc0f393-d3cc-48c0-bd14-e9dfa4ab034c
+2025-11-17 15:08:05.966 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9e195329-2553-4420-8bed-cebb34ff3314
+2025-11-17 15:08:06.033 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9b32c393-653c-4e16-bae9-5222abbf3158
+2025-11-17 15:08:06.095 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2b2185d5-a83b-413f-9c95-8535477c56ab
+2025-11-17 15:08:06.160 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 472d0552-2d0b-4fa2-a634-1ff77f2a5ea1
+2025-11-17 15:08:06.229 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 96f1a282-e879-470c-8f48-f606ecb07c66
+2025-11-17 15:08:06.285 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2e3d9b5d-5454-4e25-9d6c-b65b8a284b0e
+2025-11-17 15:08:06.356 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7a3969f8-dfe9-48bc-82d6-97da8e5d3415
+2025-11-17 15:08:06.433 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a2c766c8-fde9-4759-9325-63c746247180
+2025-11-17 15:08:06.505 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e3ed73c3-8c7a-4a10-b0f7-66c880d174a0
+2025-11-17 15:08:06.577 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 381af36c-8216-4c7a-be39-0d507cadc3cb
+2025-11-17 15:08:06.650 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 98b7a1d5-b9c0-4e74-b1bb-32452026b05a
+2025-11-17 15:08:06.729 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8f7a1ea0-fe47-4537-be69-02e87db87c73
+2025-11-17 15:08:06.804 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6a925d4b-10b4-4375-bcf7-46b44028dff3
+2025-11-17 15:08:06.872 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1ffda455-b351-406e-8a2f-c86e7e82faf4
+2025-11-17 15:08:06.935 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ec06d1c0-dffd-41d2-b3f4-43775b9da300
+2025-11-17 15:08:07.004 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a8bbc4ed-a3c5-4864-82c7-2b1ca4dca36d
+2025-11-17 15:08:07.076 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: de4bffc5-4bf8-481b-acd1-d7b6e172bdce
+2025-11-17 15:08:07.220 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8cd7274d-0390-4b83-ba9a-279b6f574bbd
+2025-11-17 15:08:07.379 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d9d969ad-eeb4-44e4-b0f5-a5ffeaa5d348
+2025-11-17 15:08:07.630 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4f3ece77-1ed7-4e80-b8eb-f050aa81a0cc
+2025-11-17 15:08:07.785 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fd6ccd06-53a2-4fbf-b6c4-20d7123af9e6
+2025-11-17 15:08:07.908 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a3b15e55-2ffe-4a51-bc7a-db924c062501
+2025-11-17 15:08:08.141 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 175dd0be-ecc3-46e6-8885-c2c4d067dd47
+2025-11-17 15:08:08.256 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 66d09556-88f3-4fdc-aec9-32c0b89d1546
+2025-11-17 15:08:08.390 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 12f1199e-30fe-485c-b85f-11dca77eb039
+2025-11-17 15:08:08.538 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 97fa656d-9407-4b5f-97bb-ee875568cbc1
+2025-11-17 15:08:08.666 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6a5e2c71-804d-4ff2-a546-6163b9d5fd27
+2025-11-17 15:08:09.020 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0ae3eb4c-baf4-4dab-9c81-71f8b6a31059
+2025-11-17 15:08:09.120 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a9c7304e-70d1-485d-99d2-b599b08cb508
+2025-11-17 15:08:09.176 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 35cf4d37-72b3-489a-8acc-ac719116c455
+2025-11-17 15:08:09.232 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a10b36a1-1ad4-4c51-b70f-a6e7e896cf7c
+2025-11-17 15:08:09.289 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3792ec6a-cf4d-4d21-801e-9e38553bd2cb
+2025-11-17 15:08:09.351 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6a1b7f7e-69c9-4f6f-9061-6886a7c2f8ca
+2025-11-17 15:08:09.416 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e68c5718-f053-4144-a686-a4618819b629
+2025-11-17 15:08:09.474 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3b455cef-a3e6-417f-a6a7-97db37ba2a20
+2025-11-17 15:08:09.531 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5359dc58-1f6c-4c61-b812-039c67dcedd8
+2025-11-17 15:08:09.587 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7084691d-0e85-486c-9c9b-d7fd9233d189
+2025-11-17 15:08:09.645 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ce32d0a3-03bb-4a59-a92d-84e91e13c695
+2025-11-17 15:08:09.704 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 93fac9c4-6c89-4fb1-9cc0-0b2be323f609
+2025-11-17 15:08:09.763 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 62753fd5-cd54-4b85-80e7-ab069877fefb
+2025-11-17 15:08:09.817 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ae2a362a-9daf-48b0-85e4-f128e5bb1b86
+2025-11-17 15:08:09.876 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f5b2af26-16b6-4e97-98fd-276ef48b2b36
+2025-11-17 15:08:09.933 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b6789642-fc11-40a5-ace7-565c488f4d18
+2025-11-17 15:08:10.000 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7979d7d2-af46-4fa1-85de-c80df8946b2d
+2025-11-17 15:08:10.061 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: cd6e62d1-9702-437a-8345-620f412cfbf2
+2025-11-17 15:08:10.115 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ad429e31-4838-4cd6-9879-1558ac18e12e
+2025-11-17 15:08:10.174 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c0c81550-183e-49f7-bbf4-06a87548974b
+2025-11-17 15:08:10.234 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8c434ec7-5548-4e86-b8b1-b7a1025eaa96
+2025-11-17 15:08:10.292 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 45783d1c-3e1f-4fd8-98e0-d6c1d9d35735
+2025-11-17 15:08:10.350 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f799457b-7eb9-4184-9fea-d1806d9fe8f7
+2025-11-17 15:08:10.414 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 65ce63f1-547b-498c-8049-394d7a57e4bf
+2025-11-17 15:08:10.473 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4b75b0f6-fbaa-4314-a044-ee52ac0222af
+2025-11-17 15:08:10.537 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3acd7c45-8a15-43f6-a42e-b11a1a6471ce
+2025-11-17 15:08:10.600 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dcac4ac7-e646-4a5a-91c9-dea003bc9a3d
+2025-11-17 15:08:10.657 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4a9db6ee-aaf5-4303-96a7-33fdb0b05d5a
+2025-11-17 15:08:10.718 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8ec0fcb2-e945-4874-9ee2-c2cfabc26e51
+2025-11-17 15:08:10.778 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 733bff5f-f59e-4356-8c53-a7b8a99a0abd
+2025-11-17 15:08:10.843 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b9483b69-4371-47bd-8469-e38ccaade87e
+2025-11-17 15:08:10.900 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6bb1a21d-9ab9-4835-8b18-f233880cd671
+2025-11-17 15:08:10.959 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 713b3305-1d24-4f9d-8a46-b38b530fafe6
+2025-11-17 15:08:11.027 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 357055f2-7f9e-4d9b-a8dd-b5befcd50969
+2025-11-17 15:08:11.093 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4d6d948e-aa1f-40d1-9d83-8e63dda0966f
+2025-11-17 15:08:11.161 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 99dcab48-0eab-4e7f-9d83-c5429ff5a243
+2025-11-17 15:08:11.222 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dfefe39c-c6b3-4855-8b2a-3b4ad2fb7f27
+2025-11-17 15:08:11.279 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e9eac481-ec6d-4b58-8ad0-0d6e78f4592c
+2025-11-17 15:08:11.334 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 53079cfb-460d-4cf8-ad5b-9560ea2a50b7
+2025-11-17 15:08:11.405 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 95476aae-ff55-4bd5-adea-6e732a4d19ab
+2025-11-17 15:08:11.478 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0ad76925-1b77-41a2-89f1-3780ac4a5c54
+2025-11-17 15:08:11.558 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4112434b-7470-43d5-a5c4-a73a91407595
+2025-11-17 15:08:11.638 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 19286f3e-3a96-46c5-be96-50a11bc9f1d1
+2025-11-17 15:08:11.700 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1832eb7d-1b74-43f4-a649-deda96568f5c
+2025-11-17 15:08:11.764 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0501e4b8-f9e2-474d-be07-054b70612b5d
+2025-11-17 15:08:11.829 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bb0ada86-327d-4593-b940-e32b4e5187f7
+2025-11-17 15:08:11.892 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b4a61335-d525-4ec9-9903-44bc63b3f3b9
+2025-11-17 15:08:11.957 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ec45514e-9d3f-44c0-a681-4398bb89ab35
+2025-11-17 15:08:12.025 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6f30938e-8296-4868-9a7a-1d0063e8dd89
+2025-11-17 15:08:12.081 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1b06d3ab-e6eb-4802-add3-c67d195b3313
+2025-11-17 15:08:12.163 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d4a68c17-40af-47d6-8540-90d89029115b
+2025-11-17 15:08:12.273 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 65ed4058-8cea-4a46-a8a5-adb69d2080a4
+2025-11-17 15:08:12.333 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b8bff65c-024d-4159-a3a2-34c689e71265
+2025-11-17 15:08:12.406 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 862c2b8a-61ea-4de2-b5b7-8ff070b973e9
+2025-11-17 15:08:12.465 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 08e4e424-d51e-465c-90f2-631a2b94dde4
+2025-11-17 15:08:12.527 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9e94bb70-3842-47e2-8aa3-ab91ae818274
+2025-11-17 15:08:12.591 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8221d2c6-31aa-48fa-86f8-b6dd6b99c079
+2025-11-17 15:08:12.660 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ca376b72-d0e4-4989-8236-aa296ed44584
+2025-11-17 15:08:12.724 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 29b6d071-b271-45cd-9817-2a89a1cb7f6e
+2025-11-17 15:08:12.787 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 94507338-96d7-43cc-ab0b-db043a670323
+2025-11-17 15:08:12.854 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4a064128-bc21-4890-b171-31f96e59ba65
+2025-11-17 15:08:12.919 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 30d40bad-5cf3-42db-9402-7fce38d25c98
+2025-11-17 15:08:12.999 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 48626dac-7834-40f4-b768-f98199605b0e
+2025-11-17 15:08:13.066 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3af46c36-05da-463a-8be2-798370405457
+2025-11-17 15:08:13.135 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d8fe3c77-7d0a-4477-8ff5-b646891b53ce
+2025-11-17 15:08:13.215 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5a2288de-41fe-47a5-a6b7-813b7bd1b687
+2025-11-17 15:08:13.283 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 467d09f5-92eb-47d4-b0f3-837251aad8ce
+2025-11-17 15:08:13.347 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d830c200-3ffe-4d90-b048-f00cff2184db
+2025-11-17 15:08:13.423 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 812f352d-dab3-4f1c-95e2-8cfd785c8c41
+2025-11-17 15:08:13.506 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dbe88367-c4d4-4187-8a04-d6354a51bc9b
+2025-11-17 15:08:13.591 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 899dd6f4-509d-428d-b4c3-4d0f6971430d
+2025-11-17 15:08:13.674 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 34382e01-bb32-40e4-b355-f70ea0fb5086
+2025-11-17 15:08:13.852 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e254c131-9f64-48c4-bfc4-2180429f7f16
+2025-11-17 15:08:13.986 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e9c5953c-9b1d-4a2d-aefd-8b1818ed3dce
+2025-11-17 15:08:14.068 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2fb57358-6722-475a-8108-be2a5cb9ce32
+2025-11-17 15:08:14.130 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d792c8e6-aa74-47cf-bc1b-889c2b6b70f3
+2025-11-17 15:08:14.194 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dbe652c2-56f9-4fc0-be1b-2d72ebf015d6
+2025-11-17 15:08:14.264 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: df2e2892-1387-42ba-b39d-f9ac4627a813
+2025-11-17 15:08:14.335 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b797d9f4-cb7c-4233-bc54-9d207bbeaa7e
+2025-11-17 15:08:14.412 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d5a0a71e-df19-4756-9bab-e6aa5b6ed6e8
+2025-11-17 15:08:14.480 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 438edfb4-a6db-4545-aa26-d8e48271c982
+2025-11-17 15:08:14.544 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 152477e7-9ad3-43de-978f-2b852f392d87
+2025-11-17 15:08:14.612 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9fd05cb4-e0e5-41c1-ba25-f34d220407da
+2025-11-17 15:08:14.678 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 590ceefc-a419-4c0d-844d-5f2467156c02
+2025-11-17 15:08:14.747 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c1d55c2e-f49f-4609-a03b-9ba2c3fc15d2
+2025-11-17 15:08:14.807 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7f455ce7-0118-4646-99c8-762cbee17fb5
+2025-11-17 15:08:14.869 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ba89c37d-865b-44e7-9929-8f05b952b603
+2025-11-17 15:08:14.934 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a0f02338-ee15-4228-bdba-38c36b9e331c
+2025-11-17 15:08:15.015 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 98751aed-6583-4b7c-b15d-25a404c87f83
+2025-11-17 15:08:15.083 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f30141c1-64c2-4240-ba14-ba3e106022f2
+2025-11-17 15:08:15.153 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 14de0777-0681-47b5-8b4e-4e9401710ebc
+2025-11-17 15:08:15.217 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 70dfc5ec-67cb-4573-b20d-b0bcad730373
+2025-11-17 15:08:15.293 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0f014105-9122-488e-842f-1ca6a596f29e
+2025-11-17 15:08:15.351 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5bf287c9-ebc8-42df-972e-de7c0cf3179a
+2025-11-17 15:08:15.425 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: cce31762-e910-43e3-8b4a-504c59c92db3
+2025-11-17 15:08:15.489 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8e1d81fb-b2f5-449b-a517-a09598de12c8
+2025-11-17 15:08:15.550 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6b49bd9e-ef6b-4dce-b543-a74e87541c3f
+2025-11-17 15:08:15.609 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1b128171-914d-4f7a-90c4-72b10dd96e6f
+2025-11-17 15:08:15.669 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6ed7db63-e505-448b-b60a-1f273eab819a
+2025-11-17 15:08:15.728 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 19ccfaa2-025f-4a86-bdc0-e2125007bcfc
+2025-11-17 15:08:15.800 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c13adfba-ea25-4157-820f-94e35a8901ab
+2025-11-17 15:08:15.863 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8f4ff187-6ffb-476a-a578-d263a1972dd1
+2025-11-17 15:08:15.926 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7542dd8f-2924-41a8-b144-922264d0dc6f
+2025-11-17 15:08:15.998 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: cb92db5c-7c03-49a1-a3c4-16daf05e4969
+2025-11-17 15:08:16.067 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6314e325-15ba-4446-8c8f-8ac0fa7022e7
+2025-11-17 15:08:16.130 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 853050b8-9e6d-4b2c-801c-a836a9b4d7c7
+2025-11-17 15:08:16.201 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: acf42429-a2bc-4dd8-8f56-4ef3d2ddcc21
+2025-11-17 15:08:16.271 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0c06ca40-e5b4-4984-99f0-87e29dbc8b4e
+2025-11-17 15:08:16.337 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ad31c991-6dcd-46e0-a771-61039654a13e
+2025-11-17 15:08:16.402 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9b005196-4fd3-49b4-9931-78ddccbc0a30
+2025-11-17 15:08:16.474 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 09517439-d0f9-47b3-a54f-06d68a27160d
+2025-11-17 15:08:16.567 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 594524be-8ad6-4570-8622-a03223a20f24
+2025-11-17 15:08:16.634 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2539d695-8f59-42fa-9cae-c116bba4c811
+2025-11-17 15:08:16.699 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e7a0a8c7-a871-43aa-8f07-22df3a148649
+2025-11-17 15:08:16.774 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c8a2fbec-09b9-442c-ac34-562b96d4f3e0
+2025-11-17 15:08:16.843 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 09258d8c-7c28-4e3a-9c81-f3e705341846
+2025-11-17 15:08:16.910 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2277d47b-78a4-40bf-af55-a89fe272543c
+2025-11-17 15:08:16.979 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 12424c81-7ee2-4bef-9f39-92cf1b79decc
+2025-11-17 15:08:17.051 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1ffadbf9-526f-468b-9d72-8a182e7c505d
+2025-11-17 15:08:17.118 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 87a5081c-3890-45dc-ae8e-78cf27a8c8e0
+2025-11-17 15:08:17.182 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 83b83dce-29d4-4179-92d3-0847547a4072
+2025-11-17 15:08:17.246 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 91771dbb-fdf7-4b92-bc17-1f86a2bc87c6
+2025-11-17 15:08:17.318 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2ef6e1ac-d0a3-481f-b967-d8a4ca1480e3
+2025-11-17 15:08:17.386 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7211b350-cb9c-4570-94de-8d4ee70fabd8
+2025-11-17 15:08:17.478 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6fa6c6cd-6a4e-46b6-8c31-f6f02f3d0c6d
+2025-11-17 15:08:17.572 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 726bc84c-7541-4b81-845e-5cb728bb3234
+2025-11-17 15:08:17.654 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c1613e8e-7987-4d91-b679-50f7537fd914
+2025-11-17 15:08:17.722 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6d4ef056-cc5a-4fba-b146-86dfe07cea1b
+2025-11-17 15:08:17.791 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 57c8e0ad-405d-450b-b5df-0936e2f627af
+2025-11-17 15:08:17.851 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0e079800-6abf-44a9-a4e2-5e7751538823
+2025-11-17 15:08:17.915 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bcdd458f-4fcb-4d16-9eea-0f7e0644316f
+2025-11-17 15:08:17.981 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2e1e82b3-ac42-4591-b455-dd007fb5a8b6
+2025-11-17 15:08:18.051 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c1ab79db-3533-42d0-8abe-fe653446e0dc
+2025-11-17 15:08:18.113 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7addf9f1-72e1-4fe8-9e3b-1948712d3470
+2025-11-17 15:08:18.176 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c5f518de-bde2-4bee-9bb5-00320ce0d29f
+2025-11-17 15:08:18.240 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c787d02e-68cd-4256-9fac-027255850a63
+2025-11-17 15:08:18.303 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 003592a2-9aac-4c7c-9a5b-4c83fbb62de7
+2025-11-17 15:08:18.370 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3f8a50d8-ccb2-49bb-80d5-c71d0ef1cb20
+2025-11-17 15:08:18.436 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0c696014-50b2-4ee0-b352-e9354b3db7bf
+2025-11-17 15:08:18.497 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e34d0600-7a9b-4688-9f97-987963f7a62d
+2025-11-17 15:08:18.559 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e2aeebdd-ec0a-405c-b8de-04ab6a833fa8
+2025-11-17 15:08:18.624 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 285b6d4f-78e8-4c3a-a612-4b627b3bcfb1
+2025-11-17 15:08:18.685 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fbfa3572-fb6e-40ad-85ee-369267d5f559
+2025-11-17 15:08:18.747 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 48e9a867-e2f4-4f5f-a416-bdfaab296b15
+2025-11-17 15:08:18.809 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fafa5545-fca8-4525-8c92-3794410efc7a
+2025-11-17 15:08:18.877 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 04d96b18-35dd-4d0d-8a16-58d8621aa094
+2025-11-17 15:08:18.941 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dd23a3cb-fa8e-4ec6-b73f-5eee3a707a55
+2025-11-17 15:08:19.009 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fd23a5a7-5a18-47c1-8243-180a91d4c8f5
+2025-11-17 15:08:19.071 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2b90a748-3509-4930-be0b-e2afa0ce2bf1
+2025-11-17 15:08:19.138 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a6b74650-752f-4962-871c-adc57d031ee8
+2025-11-17 15:08:19.196 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6461762c-72e0-4622-ab6b-3151c3268a06
+2025-11-17 15:08:19.260 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 74b4641e-aa22-4969-b892-4d67668750e9
+2025-11-17 15:08:19.324 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b6b1b0f8-2951-418b-938b-f6c3a1136be1
+2025-11-17 15:08:19.388 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 526f26b6-8cf0-4efe-9437-5e5719a755d1
+2025-11-17 15:08:19.459 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a506bd05-eacc-4680-9dac-51c14edf1a56
+2025-11-17 15:08:19.530 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 84ec4057-714c-4fe6-9fbf-12a3051d9e25
+2025-11-17 15:08:19.590 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8cb6f303-ed82-4d53-96ea-d2802d339d87
+2025-11-17 15:08:19.650 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 51c60752-f3f8-4150-bd3a-f74f58705768
+2025-11-17 15:08:19.717 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c4134016-0754-42c2-abdb-4500f53d3914
+2025-11-17 15:08:19.781 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a89404f5-9650-48e4-9350-5af0a84aa138
+2025-11-17 15:08:19.848 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1cd0630c-966a-4a5c-bc36-fc622efb8073
+2025-11-17 15:08:19.915 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0871d5bb-ef9d-4653-88f9-343e553e2dee
+2025-11-17 15:08:19.990 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d89c5a5d-bcea-4662-91d2-fe48cbd0b11f
+2025-11-17 15:08:20.057 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3dba840e-1104-4294-a4ea-20f9f29a62d6
+2025-11-17 15:08:20.115 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ae2d3567-2337-495b-8f86-2de8330ae107
+2025-11-17 15:08:20.179 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 72b82bca-e5c3-419e-9319-cb59f29e78ea
+2025-11-17 15:08:20.244 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 10003085-efdb-4402-ae69-06e3e5fd6184
+2025-11-17 15:08:20.309 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1bad6614-779c-4d8b-a5ba-c882ee6d6002
+2025-11-17 15:08:20.371 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 41938cdf-91bd-4f38-9106-af0b23b064e4
+2025-11-17 15:08:20.438 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 46a10f07-5426-46a7-9ee5-7c16ee6a929f
+2025-11-17 15:08:20.513 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 33eb86fb-a0f5-4264-b90a-198691dd5da6
+2025-11-17 15:08:20.586 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f029ca11-dd5f-4eb4-88ef-1f3d9a9af167
+2025-11-17 15:08:20.647 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d63b3cbf-7c67-4724-a8db-cc41afb49860
+2025-11-17 15:08:20.714 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bf4d1f95-2ff1-4eac-bbfb-043e6f8af3c7
+2025-11-17 15:08:20.777 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ff4dd786-294f-47b8-81c4-11c1def0160f
+2025-11-17 15:08:20.839 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d08e1273-71fd-4d8d-b939-eaaba8d5bd6f
+2025-11-17 15:08:20.902 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 307c68f4-e734-480d-b6a5-4d947db876f8
+2025-11-17 15:08:20.971 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 334c83b9-cebb-4fd0-a0a8-2393abb7e5f0
+2025-11-17 15:08:21.041 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3488d6fb-311d-448c-826f-e31e1ca0bd89
+2025-11-17 15:08:21.107 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a19e1b55-5059-4b03-93b4-7dafb93c277a
+2025-11-17 15:08:21.168 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 075df2c5-1962-4356-9368-ad77928e371c
+2025-11-17 15:08:21.228 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d8c524f4-9f1b-43cb-a82b-689221224d96
+2025-11-17 15:08:21.293 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: acd1b4d1-ab96-4b8c-9e52-e3c9002e8eed
+2025-11-17 15:08:21.383 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 07b7706d-32f8-4d2f-9080-98229ae4075d
+2025-11-17 15:08:21.452 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4a99cb0c-7b8d-4dd9-9f85-5cbef33ecd84
+2025-11-17 15:08:21.517 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 40ffd4e9-6892-4e5b-9e43-1cabc0aac209
+2025-11-17 15:08:21.576 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fd031b9c-2efb-4211-aad4-8cdbc03dba1c
+2025-11-17 15:08:21.640 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ac990639-e4d7-4f15-9b4b-509eb5afad17
+2025-11-17 15:08:21.705 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 00b993ff-a4cb-4fa3-aecc-6b8538e8c16f
+2025-11-17 15:08:21.768 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0b914ccf-27c1-4cb9-9519-ca033356e6d0
+2025-11-17 15:08:21.832 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8316b7c9-e128-41f1-80c2-58b1b1123ac3
+2025-11-17 15:08:21.900 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c7f77fa6-b25b-4cf5-bafe-ceed67f98b92
+2025-11-17 15:08:21.968 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c5afd2e1-9b6d-49a7-b8c8-1384e2fd8c37
+2025-11-17 15:08:22.036 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 15a351a2-184b-4057-a573-cfd695068716
+2025-11-17 15:08:22.099 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 944cdc4e-6deb-4f1c-8148-13bb2ac984f3
+2025-11-17 15:08:22.160 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1b109f90-2a10-49d2-bffa-34203ae96b9d
+2025-11-17 15:08:22.228 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 12982a2a-cf0b-44fe-b29f-3b3a6396d887
+2025-11-17 15:08:22.292 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b8b6a9f0-30e3-4046-9707-919a5524f2c5
+2025-11-17 15:08:22.354 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 86dcdbff-fdef-49ef-8d18-6c0811089301
+2025-11-17 15:08:22.426 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ccbfd119-e390-4bce-bdd8-1320319a69f9
+2025-11-17 15:08:22.485 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ad33dbf4-6b6d-4c13-bc99-8078357f2972
+2025-11-17 15:08:22.555 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 63964380-0bbf-48a6-a2ec-98489cefdb05
+2025-11-17 15:08:22.625 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1d65f565-23e1-4dd6-a72a-f8110f5f6489
+2025-11-17 15:08:22.704 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bfe2319b-4d3b-4952-824a-22fa48a64cbf
+2025-11-17 15:08:22.786 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9d728c45-6abe-4e92-a908-4282c49e920b
+2025-11-17 15:08:22.863 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4fc8cb2d-0073-45ac-8f32-c84d3371e88b
+2025-11-17 15:08:22.938 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 02d836e2-eea7-43b8-b201-5c73ad19d992
+2025-11-17 15:08:23.017 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 85791ee9-07cf-4701-aba3-cd37db84b404
+2025-11-17 15:08:23.102 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 87785b5d-588a-418a-8779-bd0207645f8b
+2025-11-17 15:08:23.181 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dfeb8590-f7c7-4978-8d7d-10fbd9c40f9d
+2025-11-17 15:08:23.261 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 533bcf39-b1c8-4c51-b3e9-545b78a10bf6
+2025-11-17 15:08:23.338 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: caa8c952-53f3-4303-a5d7-bddfcf91d29a
+2025-11-17 15:08:23.423 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ef8db2c5-ff8e-47b1-970b-be58ebcd03a9
+2025-11-17 15:08:23.520 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3a14a7f8-f5cc-4779-b9cc-e4c216579c2b
+2025-11-17 15:08:23.568 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 10cb23bf-f58c-4025-b12a-f10e51b5b991
+2025-11-17 15:08:23.630 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 14d1a2d6-2da8-4ba0-81e6-3854f68585c3
+2025-11-17 15:08:23.695 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 27ebd667-5cc1-41c6-b3e9-719329592f0c
+2025-11-17 15:08:23.759 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c94e06f9-fbfe-429b-8cfa-43460477c09b
+2025-11-17 15:08:23.827 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 339f3f0a-87ce-423c-a788-d94d827ed514
+2025-11-17 15:08:23.889 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 98aceab9-b78f-4759-8a67-9d78fc0f9d52
+2025-11-17 15:08:23.952 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1affb0e7-a7d3-4f68-829f-00747f644eb1
+2025-11-17 15:08:24.025 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 17f28d76-f759-4597-a0b7-2e89d9522aec
+2025-11-17 15:08:24.101 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 15b18ae5-1772-44ea-9235-9bb8f6ed101d
+2025-11-17 15:08:24.169 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ce4a3e69-5932-4020-ae23-d472397bba98
+2025-11-17 15:08:24.234 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bc9e2a56-8d8e-42d8-aa78-97db133cda37
+2025-11-17 15:08:24.305 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3cd632d5-1649-4e77-b48a-8125a788fa62
+2025-11-17 15:08:24.380 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 70ccf27c-dd2b-4911-9893-eef4aee7b5af
+2025-11-17 15:08:24.454 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fda24f85-2860-4673-8988-b60d442f0c85
+2025-11-17 15:08:24.522 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e4d3b33c-d002-4e7f-a9e3-62ec624f24ce
+2025-11-17 15:08:24.592 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fe839cad-f48a-4fbd-86be-51f9af43b2fd
+2025-11-17 15:08:24.662 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 80b418a4-8a60-46be-b1d6-128fd9129c93
+2025-11-17 15:08:24.734 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 559594d8-54d8-4423-be6e-269be6aa56a1
+2025-11-17 15:08:24.802 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 130d6ed4-26ab-4d58-bf3c-79a6c60a6122
+2025-11-17 15:08:24.876 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 29b86323-a3dc-4a4b-bc72-a341770dae6a
+2025-11-17 15:08:24.951 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4b1a3bf3-0a87-4a28-af02-10652f6dbcd5
+2025-11-17 15:08:25.033 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0508fe0b-c912-45a5-a815-fcdd470421a8
+2025-11-17 15:08:25.111 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d12f2499-6198-4169-af61-5b7f3ca6aca9
+2025-11-17 15:08:25.183 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7ce02ebf-6ac3-4e77-855a-ff8fd5de2c28
+2025-11-17 15:08:25.242 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: db26b21c-9f74-4fcd-9ae7-4e77bf7d780e
+2025-11-17 15:08:25.309 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9b23157f-e945-4881-908c-7f43642ab49f
+2025-11-17 15:08:25.377 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b31d9132-1ca1-41b6-bd34-26d3d0fa8348
+2025-11-17 15:08:25.449 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 01f92800-5c4b-4e29-bd66-7b3c4b814f34
+2025-11-17 15:08:25.511 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d726d26f-4eba-4566-9cac-190eb4b30e00
+2025-11-17 15:08:25.575 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 860a3bf8-aa29-4d95-a9dd-9018087eb6dc
+2025-11-17 15:08:25.631 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7d1c84f8-8a4b-441f-b21f-2d6c06ed7c75
+2025-11-17 15:08:25.690 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 78dad62d-7f13-4c01-b2e4-987f73e4b9ad
+2025-11-17 15:08:25.755 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 882df4a8-b72e-4bf8-badd-23a6f7238329
+2025-11-17 15:08:25.824 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5881fda5-ce67-4436-a927-0018cb8afdf6
+2025-11-17 15:08:25.895 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 970eb348-3e70-42ff-a8ba-6e7b53fb8579
+2025-11-17 15:08:25.969 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e7cc5930-c534-4113-b02a-8633f0f451d3
+2025-11-17 15:08:26.042 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0c06c4f8-00a3-4713-8bfc-cac7e18ac0da
+2025-11-17 15:08:26.105 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 71999921-9a9b-47c0-9039-d8c8b71bccf7
+2025-11-17 15:08:26.165 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6d5a5338-db24-482c-94bb-bcdc251b420d
+2025-11-17 15:08:26.229 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a2007d6e-ee05-4b2d-a66e-6ac2beb1df35
+2025-11-17 15:08:26.306 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0563659c-b747-47d1-8553-47fedea8485d
+2025-11-17 15:08:26.371 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6bd44722-987b-43b7-b15b-d2d5d4c3cb01
+2025-11-17 15:08:26.471 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bbb0e6df-fd26-4833-ba13-a043c945183b
+2025-11-17 15:08:26.535 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: af552984-3101-4f38-bc6d-18667898dd82
+2025-11-17 15:08:26.598 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6b9ae7fd-fdbb-4fde-bf0a-8377150a2b04
+2025-11-17 15:08:26.656 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 85ac1bf6-af44-4cf6-9a9f-05dfa70e1c40
+2025-11-17 15:08:26.719 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b9116d1e-1551-42c2-ad89-a3e83cf295f3
+2025-11-17 15:08:26.779 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 82799133-08f4-4307-ba38-f1ba4d7f8cf8
+2025-11-17 15:08:26.848 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c045582b-9fb6-4385-94d7-63a253bd6745
+2025-11-17 15:08:26.911 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9331a00e-7f85-44fc-aaa2-37e719cef128
+2025-11-17 15:08:26.975 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 242df335-f17d-4b0b-8189-f2e1003cf524
+2025-11-17 15:08:27.032 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5603ccee-a1bd-4f45-b44c-8b9ec073bb69
+2025-11-17 15:08:27.092 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 781c466e-9c7e-4ee8-8251-ea899ccecb96
+2025-11-17 15:08:27.155 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 699c41d5-2fcc-4527-b8e5-d6479da23921
+2025-11-17 15:08:27.214 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9c81aab7-f107-4db1-8928-b9cea591bfc7
+2025-11-17 15:08:27.272 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f019d69b-6414-478f-8ac7-fda9111527a5
+2025-11-17 15:08:27.328 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a74b8468-5e86-4883-b651-846ffd8ac607
+2025-11-17 15:08:27.383 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 761f0a68-9510-4934-8976-a6fb7a75e02f
+2025-11-17 15:08:27.446 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 37857d65-b65e-4848-a727-3ec61909fad0
+2025-11-17 15:08:27.501 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3ffc945e-191a-4cf6-aaf9-7da2374c16f9
+2025-11-17 15:08:27.555 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6f8e2b7a-143c-47b5-82fa-d53f4f777948
+2025-11-17 15:08:27.615 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d08889c2-1d44-4227-80e2-033fe9cf7914
+2025-11-17 15:08:27.676 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c1b7294a-3340-4554-8f87-86d1ad52f4d6
+2025-11-17 15:08:27.732 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 37420f8b-1fc7-418b-b69e-85c0570921e2
+2025-11-17 15:08:27.786 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: be53bdb2-aa93-4edf-bbaa-dc22ebbbe8de
+2025-11-17 15:08:27.842 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c525d736-c463-4d2d-8580-35fd94957285
+2025-11-17 15:08:27.901 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c575c52b-6982-4fed-a57f-baf68ba7e3ca
+2025-11-17 15:08:27.969 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 23c5a4ce-208c-46ea-94c2-3b8915417293
+2025-11-17 15:08:28.027 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 999bfcad-eb6a-488e-b4ee-fd9a0a5b4ab0
+2025-11-17 15:08:28.082 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5ffb9520-ac06-4289-9d7e-ed1ad1591a97
+2025-11-17 15:08:28.141 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c96bc99e-3e0f-41bf-b45d-22bf3ba28d4e
+2025-11-17 15:08:28.199 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ed26573a-21d8-476d-939e-6f663c6155fa
+2025-11-17 15:08:28.265 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9e7d3999-7c19-4b15-a8c0-04ce2770e615
+2025-11-17 15:08:28.324 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 99d35a86-f67e-4d67-a63b-91faecffbda2
+2025-11-17 15:08:28.379 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2a0cfae3-84b1-4c5b-950a-12ed26921081
+2025-11-17 15:08:28.439 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e2cd0a34-15d9-4c85-96eb-855a9e50fc48
+2025-11-17 15:08:28.496 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 64ce1c5c-6e7e-4a07-8878-93ac43a6024f
+2025-11-17 15:08:28.558 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 79441967-7146-4a5c-8ee4-19f6f57976fc
+2025-11-17 15:08:28.618 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c6617f62-c2a8-4502-b6a5-817dab228aee
+2025-11-17 15:08:28.670 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 93931724-07b4-4a9c-9028-9a3e9c61462f
+2025-11-17 15:08:28.725 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ab975c71-5215-4957-9bf4-be701707c92f
+2025-11-17 15:08:28.782 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b1defba6-d71f-49f4-83ac-80970e6008b3
+2025-11-17 15:08:28.844 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6367f104-7acb-4731-bf57-cb9adc57630d
+2025-11-17 15:08:28.898 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 981221ee-5f2e-4e1d-b9c8-010cda7e900b
+2025-11-17 15:08:28.954 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7315df7f-26d3-4dbe-a675-3c42579574f3
+2025-11-17 15:08:29.022 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 882a04b4-4894-4834-8a54-a5f3d652085e
+2025-11-17 15:08:29.079 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: de108113-4fd2-49be-bb7e-bbf85312db94
+2025-11-17 15:08:29.143 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: de0ecccb-6f17-47f1-810f-7ebb0c0f9033
+2025-11-17 15:08:29.197 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 360d7f9c-21ad-4f89-b7c2-18ae70fbed26
+2025-11-17 15:08:29.253 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1c5c0570-62fb-469b-bb15-23233b9dc991
+2025-11-17 15:08:29.313 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2df7e468-e7de-4952-80cf-6f10e615f5e4
+2025-11-17 15:08:29.375 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bb904e2b-f409-47b0-b4fc-9e6b15b38d15
+2025-11-17 15:08:29.444 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6c0b8f19-f85a-49eb-862d-fc4e68d39fda
+2025-11-17 15:08:29.497 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 23b36eaa-99e5-468f-8c8c-2b9485207a0e
+2025-11-17 15:08:29.548 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4b22bce2-a1ed-428b-bf5b-d6cf7938ba8a
+2025-11-17 15:08:29.614 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d10cc79a-7f04-48c3-8c8a-ffb9f43672e3
+2025-11-17 15:08:29.681 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 29e8c41a-ff94-4385-87e1-05a5e1a3b52f
+2025-11-17 15:08:29.743 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 07404ed8-8735-4071-b21a-07800decdd4c
+2025-11-17 15:08:29.798 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: edb5b462-2e10-4430-80de-0757074ecdb4
+2025-11-17 15:08:29.858 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4baaaee3-d212-4116-855c-abf06c9fd1f3
+2025-11-17 15:08:29.916 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3a0b1a19-d8ae-4c65-b7e6-409efec4984c
+2025-11-17 15:08:29.984 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 42e5424b-d7d2-4e4c-a421-02800ebb88ae
+2025-11-17 15:08:30.057 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 694ed90a-f8a3-4f07-9136-a690cf5b5d50
+2025-11-17 15:08:30.124 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e833ac0a-1efb-42fc-8868-aa97ca450f20
+2025-11-17 15:08:30.193 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 58da6db3-bd17-4961-9801-06041a7cb193
+2025-11-17 15:08:30.250 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4c116969-1274-4736-8807-25641967a411
+2025-11-17 15:08:30.316 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1aacf74e-6f3c-4887-bfb3-032b84d3dc7f
+2025-11-17 15:08:30.413 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2ac6fbf7-bddd-4b54-82bf-234e25b38623
+2025-11-17 15:08:30.483 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5fd5a533-9dff-4c22-b4a3-067b24e11369
+2025-11-17 15:08:30.544 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 1ee18771-5346-4030-b791-a800e40bcde7
+2025-11-17 15:08:30.604 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d07174eb-cf89-4a01-a123-d807ca0e37fa
+2025-11-17 15:08:30.666 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5e833d39-f129-419a-8d48-cf76c109bf3e
+2025-11-17 15:08:30.728 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5884fe4a-3606-40d4-a5a8-8b1c04527af6
+2025-11-17 15:08:30.784 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 118ecd12-97ee-4327-8175-39f89f52fa41
+2025-11-17 15:08:30.835 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4578aa26-3410-4a72-b642-5d973e26a2d3
+2025-11-17 15:08:30.896 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a47c018a-6aed-4833-9fb9-3c92862e959b
+2025-11-17 15:08:30.959 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3738b4bd-6209-4691-bbae-d6d2c68e73d7
+2025-11-17 15:08:31.027 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c31692c3-8535-4c2a-adc7-a0e2bfc03b58
+2025-11-17 15:08:31.084 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 405b407b-d00e-473a-b1c4-5583bbefe248
+2025-11-17 15:08:31.147 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b9aee7f7-6b51-4654-b87b-e24803be784a
+2025-11-17 15:08:31.214 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8aded7bd-16c2-4431-a69c-7c17490f49de
+2025-11-17 15:08:31.289 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3447574d-3fa1-4e5b-acae-7c3707bd7639
+2025-11-17 15:08:31.360 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 75af403f-1088-4538-ab39-17b4d55fc1c2
+2025-11-17 15:08:31.433 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: de7e602d-2fa3-4047-88c1-b5f73eb63ae5
+2025-11-17 15:08:31.495 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bce20d4e-edf5-47f1-badc-b4e07c923915
+2025-11-17 15:08:31.559 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 278f3d33-7e63-475e-94a2-0cdd75968439
+2025-11-17 15:08:31.625 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 4560459b-8c63-4c9e-acc1-2ca299399c74
+2025-11-17 15:08:31.689 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d43d8598-ad5b-4004-9a0a-02f8f33a3585
+2025-11-17 15:08:31.747 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 68ab67f1-286a-4f76-b892-a9fe772431f9
+2025-11-17 15:08:31.804 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e7565711-7fb3-41e7-bb3f-6e926b29ed18
+2025-11-17 15:08:31.863 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: aa08c509-2448-4c7b-b307-54b6a8f23232
+2025-11-17 15:08:31.924 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: da9cde71-3696-41c6-9b8a-8e1f5095c946
+2025-11-17 15:08:32.007 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3e98edce-db30-44dc-bc03-9dbc11256d8d
+2025-11-17 15:08:32.071 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3c216520-1639-474f-a2d6-9e2def5fa887
+2025-11-17 15:08:32.135 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 07e63bcc-d93b-4b5f-b951-36462c5d8a8a
+2025-11-17 15:08:32.199 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d7825f70-21c5-4b30-91f0-330ce03e96cf
+2025-11-17 15:08:32.265 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fec05290-09c8-4741-81d6-52e10f66e269
+2025-11-17 15:08:32.334 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f1371fac-f258-462c-bb79-a39c3f983597
+2025-11-17 15:08:32.403 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f6ba2545-7d1d-4b8e-9bbc-b1ec39161bb4
+2025-11-17 15:08:32.475 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5f021a2c-496d-4bc0-beeb-fd51a5f925e5
+2025-11-17 15:08:32.537 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fa693f81-3145-4f50-bd1a-5ce845d1ccc4
+2025-11-17 15:08:32.606 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d739b04d-86ca-4b67-ab0a-58922c2e0601
+2025-11-17 15:08:32.679 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7d49e61b-cc80-4bac-8d17-d7660097f081
+2025-11-17 15:08:32.746 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ae60ca50-12c0-4a26-80bd-8764aaa9638d
+2025-11-17 15:08:32.811 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: cc72753d-dfc1-4a36-87cf-bc216db63b3d
+2025-11-17 15:08:32.873 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d3b723f1-b1a3-4c13-b544-880ab7d14a8e
+2025-11-17 15:08:32.938 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 561c23e4-b469-4dc7-b448-cb727fe15394
+2025-11-17 15:08:33.015 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 298f2ceb-2dac-47f1-8c29-0049e20bed96
+2025-11-17 15:08:33.077 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: cab1bbde-f964-4bb5-a42f-b28337254a2f
+2025-11-17 15:08:33.140 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: fc678402-ea00-44cd-9693-b152d76e1ae4
+2025-11-17 15:08:33.204 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8c8e5328-2aee-4dbd-9fee-323ecf77c7d7
+2025-11-17 15:08:33.299 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0f3d9c4e-88ce-4df7-bb48-f27ea34795b1
+2025-11-17 15:08:33.412 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bbe82b4e-e631-4361-9831-eeca85a1468b
+2025-11-17 15:08:33.496 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: c275a98b-51ee-4fb3-9280-574a81376cdf
+2025-11-17 15:08:33.575 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 763a8bc2-195d-4a62-9fb7-26d2b89dc4d8
+2025-11-17 15:08:33.646 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 96bdf9db-98f4-495d-8734-7c040e1cb40a
+2025-11-17 15:08:33.711 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b7ad57ce-6417-46e8-b6f7-ec4dcd29408e
+2025-11-17 15:08:33.777 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 61629c20-fe3d-434b-8933-c6d2a7bbb0b8
+2025-11-17 15:08:33.844 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 97d3c787-8526-45ef-9ec1-af55ac1d2283
+2025-11-17 15:08:33.905 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2e58f3b4-6dcc-4724-b930-51dee746efe6
+2025-11-17 15:08:33.970 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8609c7fe-e1e4-4854-9693-552701a02aab
+2025-11-17 15:08:34.039 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ac429ca6-1e46-4c09-b8eb-173480b07153
+2025-11-17 15:08:34.104 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dc7dad0c-f643-44c9-b6ba-fad3cbd5535c
+2025-11-17 15:08:34.173 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 79b6925c-59e8-4a2b-ac19-997d3682d46f
+2025-11-17 15:08:34.237 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 32fd29f5-91b5-4e13-99fb-b1ea1710de56
+2025-11-17 15:08:34.301 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 83639a8c-c99e-4811-97b9-a3c1a67f3341
+2025-11-17 15:08:34.368 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f583700a-561c-4ea9-aaaf-9842896efbe1
+2025-11-17 15:08:34.439 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e184ad8c-c766-42ea-b5da-6c4047736ad8
+2025-11-17 15:08:34.506 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d1ec5c5b-362c-45c8-aafc-baa3a3796b25
+2025-11-17 15:08:34.573 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0f787887-d214-48d3-a87c-3bbb077594d2
+2025-11-17 15:08:34.645 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0cf2b09a-6cff-48be-a421-323f2e1d6ad1
+2025-11-17 15:08:34.708 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 7dc50fdb-9350-45a6-9632-6b1a1975342e
+2025-11-17 15:08:34.771 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e8501101-3684-4208-960b-8c0b70a86bdc
+2025-11-17 15:08:34.845 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 267cf6f4-9551-4dcd-acfb-9761e134a48c
+2025-11-17 15:08:34.912 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 10367b85-52a4-45b9-8dc0-9bf624b8d170
+2025-11-17 15:08:34.980 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e2c174fb-04ad-4933-b36f-c49dba3f834d
+2025-11-17 15:08:35.045 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: b5c21655-b325-4994-b0a0-b05da03e657a
+2025-11-17 15:08:35.112 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 44a50cac-bdd4-417d-8ca3-f5571c6ea470
+2025-11-17 15:08:35.176 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: da77d9ac-3a7d-4733-bd69-2091575fd736
+2025-11-17 15:08:35.238 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a85803fa-fb15-488e-9e53-30d270f9481c
+2025-11-17 15:08:35.303 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2f1bff3a-bb8f-4ffc-872c-49584351a9a4
+2025-11-17 15:08:35.365 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3e24d21c-3908-4b59-bddb-09950859208c
+2025-11-17 15:08:35.435 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 620455ca-d2e5-45ee-8011-6f3817f65795
+2025-11-17 15:08:35.514 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a8ca0c62-c62f-4a1c-b8ed-726e7b84b5e3
+2025-11-17 15:08:35.578 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 83014ed4-d188-4e06-80e1-0f3bf210dbb0
+2025-11-17 15:08:35.641 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: a618920c-c574-4b81-a3b6-464b7bf44077
+2025-11-17 15:08:35.705 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 941d32eb-4e13-4a62-a146-7034c37f5cd3
+2025-11-17 15:08:35.771 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 3ba5d05b-19cc-4261-b7a3-804b31e1ea2a
+2025-11-17 15:08:35.837 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 0c35eb6c-6c80-49af-b63b-98803396c829
+2025-11-17 15:08:35.905 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ca7d2523-2113-4ad3-bfb0-78668de6270d
+2025-11-17 15:08:35.982 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 72af09c5-d020-487b-a65b-5eaa44e69291
+2025-11-17 15:08:36.055 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2080971d-3d49-4210-ae7c-f941ee09dbcf
+2025-11-17 15:08:36.129 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 544527b9-5081-469d-b06f-5b226da60948
+2025-11-17 15:08:36.201 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9d5fb7c9-8c19-408b-b421-3226cc874c4c
+2025-11-17 15:08:36.273 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 9c4949af-dba0-4979-8e4c-cb02f803b69a
+2025-11-17 15:08:36.342 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 2f38c6ec-b620-45b6-8bed-a8745ec5169a
+2025-11-17 15:08:36.413 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: d8b7c0f5-027e-4723-a151-39b0903dfa42
+2025-11-17 15:08:36.485 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ada5c57f-c90f-4cdb-bb34-77b7cec57e0e
+2025-11-17 15:08:36.584 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6674ef2b-9d80-4802-9fa2-f5424189da04
+2025-11-17 15:08:36.665 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e262852f-c50f-4fdc-a0a3-e69ffe14a951
+2025-11-17 15:08:36.757 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 58260dff-1e75-4b42-81fc-b3de42e071ce
+2025-11-17 15:08:36.855 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e53a7d21-5604-404f-b8bc-d12a138483a0
+2025-11-17 15:08:36.998 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: dc0b8adb-1072-44a1-997f-5707991035fb
+2025-11-17 15:08:37.102 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 6289b03a-d877-436c-8747-e8cd1e49be86
+2025-11-17 15:08:37.199 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 01060dea-ae37-4b42-bef7-987658438dcf
+2025-11-17 15:08:37.631 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: bd2e078c-da2c-4ce8-bbb4-835ff314ee3d
+2025-11-17 15:08:38.035 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: ad0ecb0f-35a4-4037-8ebd-acd202410f7b
+2025-11-17 15:08:38.399 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 8a6a7eac-f0e4-4a9b-af19-23e5eb66ce65
+2025-11-17 15:08:38.789 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: e00c0b7f-3864-40c4-a1cd-874b4c23a6e5
+2025-11-17 15:08:39.196 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: 5b3e7167-9110-462c-9e36-bbc75d680a65
+2025-11-17 15:08:39.624 -05:00 [INF] Request OPTIONS /api/v1/documents completed with status 204 in 0ms - RequestId: f2dbe4b9-a9e0-4a10-9574-800a7106cd63
+2025-11-17 15:12:54.814 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'DocumentManagement.Infrastructure.Data.Context.ApplicationDbContext'.
+System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-11-17 15:12:54.858 -05:00 [INF] Request POST /api/v1/Documents completed with status 500 in 8513ms - RequestId: 8044633f-7d56-4a98-92ff-1109a4ff54b7
+2025-11-17 15:15:15.334 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'DocumentManagement.Infrastructure.Data.Context.ApplicationDbContext'.
+System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-11-17 15:20:44.500 -05:00 [INF] Request POST /api/v1/Documents completed with status 400 in 2576ms - RequestId: d5298d7d-f0bd-424e-b6a6-a5ab2af6ddde
+2025-11-17 15:21:58.084 -05:00 [ERR] An exception occurred in the database while saving changes for context type 'DocumentManagement.Infrastructure.Data.Context.ApplicationDbContext'.
+System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: The configured execution strategy 'SqlServerRetryingExecutionStrategy' does not support user-initiated transactions. Use the execution strategy returned by 'DbContext.Database.CreateExecutionStrategy()' to execute all the operations in the transaction as a retriable unit.
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.OnFirstExecution()
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)

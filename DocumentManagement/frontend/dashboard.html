@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Document Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>📄 Document Management</h1>
+            </div>
+            <div class="nav-menu">
+                <span class="user-info" id="userInfo">Loading...</span>
+                <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="dashboard-header">
+            <div>
+                <h2 id="welcomeMessage">Welcome!</h2>
+                <p class="subtitle">Manage your documents</p>
+            </div>
+            <button class="btn btn-primary" id="uploadBtn">
+                ➕ Upload Document
+            </button>
+        </div>
+
+        <div class="search-bar">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="🔍 Search documents by title, description, or tags..."
+                class="search-input">
+            <button class="btn btn-secondary" id="searchBtn">Search</button>
+            <button class="btn btn-ghost" id="clearSearchBtn">Clear</button>
+        </div>
+
+        <div class="table-container">
+            <div id="loadingState" class="loading-state" style="display: none;">
+                <span class="spinner-large"></span>
+                <p>Loading documents...</p>
+            </div>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <p>📭 No documents found</p>
+            </div>
+
+            <table id="documentsTable" class="documents-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Owner</th>
+                        <th>Date</th>
+                        <th>Access Type</th>
+                        <th>Tags</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="documentsTableBody">
+                    <!-- Documents will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination" id="pagination" style="display: none;">
+            <button class="btn btn-ghost" id="prevPageBtn" disabled>← Previous</button>
+            <span id="pageInfo">Page 1 of 1</span>
+            <button class="btn btn-ghost" id="nextPageBtn" disabled>Next →</button>
+        </div>
+    </main>
+
+    <!-- Toast notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

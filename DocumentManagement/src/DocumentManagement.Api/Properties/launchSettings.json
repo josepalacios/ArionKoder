@@ -1,0 +1,30 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    // Perfil para HTTP (Opcional, pero se mantiene para claridad)
+    "http": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      // ⚠️ Corregido a HTTP
+      "applicationUrl": "http://localhost:5128",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    // Perfil para HTTPS (El que quieres usar)
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      // 🔑 SOLUCIÓN A: Asegura que el navegador se abre
+      "launchBrowser": true,
+      // 🔑 SOLUCIÓN B: Abre la página de Swagger
+      "launchUrl": "swagger",
+      // La URL de inicio HTTPS
+      "applicationUrl": "https://localhost:7011;http://localhost:5128",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

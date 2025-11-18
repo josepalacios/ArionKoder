@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Document Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>📄 Document Management</h1>
+                <p>Enterprise Document Management System</p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="admin@company.com"
+                        required
+                        autocomplete="email">
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter your password"
+                        required
+                        autocomplete="current-password">
+                    <span class="error-message" id="passwordError"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="loginBtn">
+                    <span class="btn-text">Login</span>
+                    <span class="btn-loader" style="display: none;">
+                        <span class="spinner"></span> Logging in...
+                    </span>
+                </button>
+
+                <div id="loginMessage" class="message" style="display: none;"></div>
+            </form>
+
+            <div class="login-footer">
+                <details>
+                    <summary>Test Credentials</summary>
+                    <ul>
+                        <li><strong>Admin:</strong> admin@company.com / Admin@123</li>
+                        <li><strong>Manager:</strong> manager@company.com / Manager@123</li>
+                        <li><strong>Contributor:</strong> contributor@company.com / Contributor@123</li>
+                        <li><strong>Viewer:</strong> viewer@company.com / Viewer@123</li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/login.js"></script>
+</body>
+</html>
+
+<!-- ============================================================================
+     frontend/dashboard.html - Main Dashboard
+     ============================================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Document Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>📄 Document Management</h1>
+            </div>
+            <div class="nav-menu">
+                <span class="user-info" id="userInfo">Loading...</span>
+                <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="dashboard-header">
+            <div>
+                <h2 id="welcomeMessage">Welcome!</h2>
+                <p class="subtitle">Manage your documents</p>
+            </div>
+            <button class="btn btn-primary" id="uploadBtn">
+                ➕ Upload Document
+            </button>
+        </div>
+
+        <div class="search-bar">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="🔍 Search documents by title, description, or tags..."
+                class="search-input">
+            <button class="btn btn-secondary" id="searchBtn">Search</button>
+            <button class="btn btn-ghost" id="clearSearchBtn">Clear</button>
+        </div>
+
+        <div class="table-container">
+            <div id="loadingState" class="loading-state" style="display: none;">
+                <span class="spinner-large"></span>
+                <p>Loading documents...</p>
+            </div>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <p>📭 No documents found</p>
+            </div>
+
+            <table id="documentsTable" class="documents-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Owner</th>
+                        <th>Date</th>
+                        <th>Access Type</th>
+                        <th>Tags</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="documentsTableBody">
+                    <!-- Documents will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination" id="pagination" style="display: none;">
+            <button class="btn btn-ghost" id="prevPageBtn" disabled>← Previous</button>
+            <span id="pageInfo">Page 1 of 1</span>
+            <button class="btn btn-ghost" id="nextPageBtn" disabled>Next →</button>
+        </div>
+    </main>
+
+    <!-- Toast notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
+
+<!-- ============================================================================
+     frontend/upload.html - Document Upload Page
+     ============================================================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Document - Document Management System</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>📄 Document Management</h1>
+            </div>
+            <div class="nav-menu">
+                <span class="user-info" id="userInfo">Loading...</span>
+                <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="upload-container">
+            <div class="upload-header">
+                <button class="btn btn-ghost" id="backBtn">← Back to Dashboard</button>
+                <h2>Upload New Document</h2>
+                <p class="subtitle">Add a new document to the system</p>
+            </div>
+
+            <form id="uploadForm" class="upload-form">
+                <div class="form-group">
+                    <label for="title">Title <span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="title" 
+                        name="title" 
+                        placeholder="Enter document title"
+                        required
+                        maxlength="255">
+                    <span class="error-message" id="titleError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea 
+                        id="description" 
+                        name="description" 
+                        rows="4" 
+                        placeholder="Enter document description (optional)"
+                        maxlength="2000"></textarea>
+                    <span class="error-message" id="descriptionError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="file">File <span class="required">*</span></label>
+                    <div class="file-input-wrapper">
+                        <input 
+                            type="file" 
+                            id="file" 
+                            name="file" 
+                            accept=".pdf,.docx,.txt"
+                            required>
+                        <div class="file-input-display">
+                            <span id="fileName">No file selected</span>
+                            <span class="file-size" id="fileSize"></span>
+                        </div>
+                    </div>
+                    <span class="help-text">Allowed: PDF, DOCX, TXT (max 10MB)</span>
+                    <span class="error-message" id="fileError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <input 
+                        type="text" 
+                        id="tags" 
+                        name="tags" 
+                        placeholder="Enter tags separated by commas (e.g., finance, report, 2024)">
+                    <span class="help-text">Separate multiple tags with commas</span>
+                    <span class="error-message" id="tagsError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="accessType">Access Type <span class="required">*</span></label>
+                    <select id="accessType" name="accessType" required>
+                        <option value="Private">Private (Only me)</option>
+                        <option value="Public">Public (All users)</option>
+                        <option value="Restricted">Restricted (Specific users)</option>
+                    </select>
+                    <span class="help-text" id="accessTypeHelp">Private: Only you can access</span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-ghost" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <span class="btn-text">Upload Document</span>
+                        <span class="btn-loader" style="display: none;">
+                            <span class="spinner"></span> Uploading...
+                        </span>
+                    </button>
+                </div>
+
+                <div id="uploadMessage" class="message" style="display: none;"></div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Toast notifications -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script type="module" src="js/upload.js"></script>
+</body>
+</html>
