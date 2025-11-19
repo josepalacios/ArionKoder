@@ -1,0 +1,278 @@
+# ============================================================================
+# .gitignore for Document Management System
+# .NET 9 + Vanilla JavaScript Frontend
+# ============================================================================
+
+# ============================================================================
+# Visual Studio / VS Code
+# ============================================================================
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+.idea/
+
+# ============================================================================
+# Build Results
+# ============================================================================
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# ============================================================================
+# .NET Core / ASP.NET Core
+# ============================================================================
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/Properties/launchSettings.json
+
+# ============================================================================
+# NuGet Packages
+# ============================================================================
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+.nuget/
+
+# ============================================================================
+# Test Results
+# ============================================================================
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+TestResults/
+coverage/
+*.lcov
+
+# ============================================================================
+# Entity Framework Migrations (Keep these!)
+# ============================================================================
+# Migrations/ - NO ignores, mantener las migraciones
+
+# ============================================================================
+# User-specific files
+# ============================================================================
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ============================================================================
+# ReSharper
+# ============================================================================
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# ============================================================================
+# JetBrains Rider
+# ============================================================================
+.idea/
+*.sln.iml
+
+# ============================================================================
+# Database Files
+# ============================================================================
+*.mdf
+*.ldf
+*.ndf
+*.db
+*.db-shm
+*.db-wal
+
+# SQL Server files - Except migration scripts
+*.mdf
+*.ldf
+*.ndf
+# Keep SQL scripts in docs/database/
+!docs/database/*.sql
+
+# ============================================================================
+# Logs and Local Data
+# ============================================================================
+logs/
+*.log
+log-*.txt
+stdout*.log
+
+# File Storage (uploaded documents)
+uploads/
+DocumentStorage/
+C:/DocumentStorage/
+D:/DocumentStorage/
+
+# ============================================================================
+# Configuration Files (Sensitive)
+# ============================================================================
+# Keep templates, ignore actual sensitive configs
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Local.json
+appsettings.*.json
+!appsettings.json
+!appsettings.Example.json
+
+# Secrets
+secrets.json
+*.pfx
+*.p12
+*.key
+*.pem
+
+# ============================================================================
+# Frontend - Node/npm (if later added)
+# ============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ============================================================================
+# Frontend - Build artifacts
+# ============================================================================
+frontend/dist/
+frontend/build/
+frontend/.cache/
+
+# ============================================================================
+# OS Files
+# ============================================================================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+
+# ============================================================================
+# Temporary Files
+# ============================================================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.#*
+\#*#
+
+# ============================================================================
+# IIS
+# ============================================================================
+*.iis
+*.config.user
+
+# ============================================================================
+# Publish Profiles
+# ============================================================================
+PublishProfiles/
+*.pubxml
+*.publishproj
+
+# ============================================================================
+# Docker
+# ============================================================================
+.dockerignore
+Dockerfile
+docker-compose*.yml
+
+# ============================================================================
+# Azure
+# ============================================================================
+*.azurePubxml
+*.pubxml.user
+
+# ============================================================================
+# Tools
+# ============================================================================
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# DotCover
+*.dotCover
+
+# ============================================================================
+# Keep These Files (Important!)
+# ============================================================================
+# Force include these even if patterns above would exclude them
+
+# Configuration templates
+!appsettings.json
+!web.config
+
+# Documentation
+!README.md
+!docs/**/*.md
+!docs/**/*.sql
+
+# Frontend source files
+!frontend/**/*.html
+!frontend/**/*.css
+!frontend/**/*.js
+
+# Migration scripts
+!src/**/Data/Migrations/*.cs
+!docs/database/*.sql
+
+# Project files
+!**/*.csproj
+!**/*.sln
+!**/*.props
+
+# ============================================================================
+# Project Specific
+# ============================================================================
+
+# Ignore generated EF Core migrations (optional, comment if you want to keep)
+# src/**/Data/Migrations/*.Designer.cs
+# src/**/Data/Migrations/*ModelSnapshot.cs
+
+# Ignore user uploads
+uploads/**/*
+!uploads/.gitkeep
+
+# Ignore logs
+logs/**/*
+!logs/.gitkeep
+
+# ============================================================================
+# IDE Generated
+# ============================================================================
+.cr/
+.ionide/
+
+# ============================================================================
+# END
+# ============================================================================
