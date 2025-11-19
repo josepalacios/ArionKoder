@@ -4,6 +4,62 @@
 
 ### 1. **Complete Backend Architecture** (.NET 9 + C#)
 
+### Clean Architecture - Layers
+
+```
+┌─────────────────────────────────────┐
+│         API Layer (Web)             │  ← Controllers, Middleware
+├─────────────────────────────────────┤
+│      Application Layer              │  ← Services, DTOs, Validators
+├─────────────────────────────────────┤
+│         Domain Layer                │  ← Entities, Interfaces, Enums
+├─────────────────────────────────────┤
+│    Infrastructure Layer             │  ← Repositories, DbContext, EF
+└─────────────────────────────────────┘
+```
+
+#### Design Patterns
+
+- **Repository Pattern**: Data access abstraction
+- **Unit of Work**: Transactional management and repository coordination
+- **Result Pattern**: Error handling without exceptions in the normal flow
+- **Dependency Injection**: Native .NET Inversion of Control
+
+## 🛠️ Tech Stack 
+
+| Technology | Versión | Purpose |
+|------------|---------|-----------|
+| .NET | 9.0 | Main Framework|
+| C# | 12 | Programming Language |
+| EF Core | 9.0 | ORM for Data Access |
+| SQL Server | LocalDB/Express | Database|
+| FluentValidation | 11.11 | Model Validation |
+| Serilog | 9.0 | Structured Logging |
+| AutoMapper | 13.0 | Object Mapping |
+| Swashbuckle | 7.2 | OpenAPI Documentation |
+| AspNetCoreRateLimit | 5.0 | Rate limiting |
+
+
+### Diagram ER
+```
+┌─────────────┐         ┌──────────────┐         ┌──────────┐
+│  Documents  │────────▶│ DocumentTags │◀────────│   Tags   │
+└─────────────┘         └──────────────┘         └──────────┘
+      │
+      │ 1:N
+      ▼
+┌───────────────┐
+│DocumentShares │
+└───────────────┘
+      │
+      │ 1:N
+      ▼
+┌─────────────┐
+│  AuditLogs  │
+└─────────────┘
+```
+
+
 #### **Domain Layer** ✓
 - ✅ Entities: Document, Tag, DocumentTag, DocumentShare, AuditLog
 - ✅ Enums: UserRole, AccessType, PermissionLevel
@@ -177,6 +233,26 @@ DocumentManagement/
 └── README.md                                 # ✅ Complete
 ```
 
+# 🎨 Document Management System - Frontend
+
+## 📁 Frontend structure
+
+```
+frontend/
+├── index.html              # Login page ✅
+├── dashboard.html          # Main dashboard ✅
+├── upload.html             # Upload document page ✅
+├── css/
+│   └── styles.css         # All styles ✅
+└── js/
+    ├── config.js          # API configuration ✅
+    ├── auth.js            # Authentication service ✅
+    ├── api.js             # API service ✅
+    ├── utils.js           # Utility functions ✅
+    ├── login.js           # Login page logic ✅
+    ├── dashboard.js       # Dashboard logic ✅
+    └── upload.js          # Upload page logic ✅
+
 ---
 
 ## 🔐 Mock Users (for Testing)
@@ -300,6 +376,144 @@ dotnet test /p:CollectCoverage=true /p:CoverageOutputFormat=cobertura
 ✅ Unique file names to avoid collisions  
 
 ---
+
+## 🌐 Deployment
+
+### IIS Deployment
+
+#### web.config
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+    </handlers>
+    <aspNetCore processPath="dotnet"
+                arguments=".\DocumentManagement.Api.dll"
+                stdoutLogEnabled="true"
+                stdoutLogFile=".\logs\stdout"
+                hostingModel="inprocess" />
+  </system.webServer>
+</configuration>
+```
+
+#### Deployment Steps
+
+1. **Publish the application**
+```bash
+dotnet publish -c Release -o ./publish
+```
+
+2. **Configure IIS**
+- Create a new Application Pool (.NET CLR Version: No Managed Code)
+- Create a new site pointing to the publish folder
+- Configure read/write permissions on the uploads folder
+
+3. **Environment Variables**
+```
+ASPNETCORE_ENVIRONMENT=Production
+ConnectionStrings__DefaultConnection=<production-connection-string>
+```
+
+### Azure Deployment
+
+#### Option 1: Azure App Service
+
+```bash
+# Create resources
+az group create --name DocumentManagement --location eastus
+az appservice plan create --name DocumentMgmtPlan --resource-group DocumentManagement --sku B1
+az webapp create --name documentmanagement-api --resource-group DocumentManagement --plan DocumentMgmtPlan
+
+# Deploy
+az webapp deployment source config-zip --resource-group DocumentManagement --name documentmanagement-api --src publish.zip
+```
+
+#### Option 2: Azure Container Instances
+
+```dockerfile
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+COPY . .
+RUN dotnet restore
+RUN dotnet publish -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "DocumentManagement.Api.dll"]
+```
+
+#### Option 3: Azure SQL Database
+
+```bash
+# Create SQL Server and Database
+az sql server create --name docmgmt-sql --resource-group DocumentManagement --location eastus --admin-user sqladmin --admin-password <password>
+az sql db create --resource-group DocumentManagement --server docmgmt-sql --name DocumentManagementDb --service-objective S0
+
+# Update connection string en App Service
+az webapp config connection-string set --resource-group DocumentManagement --name documentmanagement-api --connection-string-type SQLAzure --settings DefaultConnection='Server=tcp:docmgmt-sql.database.windows.net,1433;Database=DocumentManagementDb;User ID=sqladmin;Password=<password>'
+```
+
+#### Azure Blob Storage (for files)
+
+```csharp
+// Alternative implementation of IFileStorageService
+public class AzureBlobStorageService : IFileStorageService
+{
+    private readonly BlobServiceClient _blobServiceClient;
+    
+    // Implementation...
+}
+```
+
+## 🔄 CI/CD
+
+### GitHub Actions Example
+
+```yaml
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '9.0.x'
+    
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build
+      run: dotnet build --no-restore
+    
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    
+    - name: Publish
+      run: dotnet publish -c Release -o ./publish
+    
+    - name: Deploy to Azure
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'documentmanagement-api'
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+        package: ./publish
+```
 
 ## 📝 Next Steps / Future Enhancements
 
